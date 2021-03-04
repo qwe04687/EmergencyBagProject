@@ -96,15 +96,14 @@ void LedMode(int Mode) {
     digitalWrite(rgbPower, HIGH);
     if (millis() > now_time + delayTime) {
       now_time = millis();
-      analogWrite(Red, Rvalue); // write analog signal
+      analogWrite(Red, Rvalue); 
       analogWrite(Green, Gvalue);
       analogWrite(Blue, Bvalue);
 
-      Rvalue = Rvalue + Rdirection; // changing values of LEDs
+      Rvalue = Rvalue + Rdirection; 
       Gvalue = Gvalue + Gdirection;
       Bvalue = Bvalue + Bdirection;
 
-      // now change direction for each color if it reaches 255
       if (Rvalue >= 255 || Rvalue <= 0) {
         Rdirection = Rdirection * -1;
       }
