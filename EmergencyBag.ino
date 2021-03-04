@@ -72,8 +72,6 @@ void loop() {
         RGBmode = 3;
       if (text == "random") // 燈效參數設為隨機
         RGBmode = 4;
-      if (text == "flash")
-        RGBmode = 5;
       // -------取得使用者於APP色環所選取之顏色--------
       if (text.substring(0, 1) == "R")
         Rvalue = 255 - text.substring(1).toInt();
@@ -150,14 +148,6 @@ void LedMode(int Mode) {
       analogWrite(Green, random(256));
       analogWrite(Blue, random(256));
     }
-  }
-
-  if (Mode == 5)
-  {
-    analogWrite(Red, random(256));
-    analogWrite(Green, random(256));
-    analogWrite(Blue, random(256));
-    
   }
   // --------------------------------------
 }
